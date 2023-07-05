@@ -1,0 +1,101 @@
+.block {
+    width: 500px;
+    height: 500px;
+    border: 1px solid red;
+    transition: .5s;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 400px;
+}
+
+.block:hover {
+    background-size: cover;
+    background-image: url(../images/Уточка.jpg);
+    cursor: pointer;
+    font-size: 0%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 500px;
+}
+
+.main-menu__link {
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(72, 114, 232, 0.9);
+    text-decoration: none;
+    transition: .3s;
+    position: relative;
+    cursor: pointer;
+}    
+
+.main-menu__link::after {
+    display: block;
+	position: absolute;
+	left: 0; 
+	width: 0;
+	height: 2px; 
+	background-color: rgba(72, 114, 232, 0.9);
+	content: '';
+	transition: width .5s ease-out
+}
+
+.main-menu__item:hover .main-menu__link:after,
+.main-menu__item:focus .main-menu__link:after {
+    width: 100%;
+}
+
+.main-menu__item {
+    position: relative;
+}
+
+.submenu {
+    list-style: none;
+    display: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.submenu::before {
+    width: 100%;
+    bottom: 100;
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 5px;
+}
+
+.submenu__link {
+    text-decoration: none;
+    color: rgba(72, 114, 232, 0.9);
+}
+
+.submenu__item {
+    transition: .5s;
+    cursor: pointer;
+}
+
+.submenu__item:hover {
+    transform: scale(1.3);
+}
+
+.main-menu__item:hover .submenu {
+    display: block;
+}
+
+
